@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suryakant Kulkarni — DevOps</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #050a0f;
+      color: #e8f4ff;
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      background-image:
+        linear-gradient(rgba(0,210,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,210,255,0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+
+    .card {
+      background: #0d1520;
+      border: 1px solid rgba(0,210,255,0.15);
+      border-radius: 16px;
+      padding: 52px 48px;
+      max-width: 620px;
+      width: 100%;
+      box-shadow: 0 0 80px rgba(0,210,255,0.06), 0 32px 64px rgba(0,0,0,0.5);
+      animation: rise .7s ease both;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; color: #00ff9d;
+      border: 1px solid rgba(0,255,157,0.25);
+      border-radius: 4px; padding: 5px 12px;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      margin-bottom: 28px;
+    }
+    .dot { width: 6px; height: 6px; background: #00ff9d; border-radius: 50%; animation: blink 1.4s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    h1 { font-size: 38px; font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
+    h1 span { color: #00d2ff; }
+
+    .role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px; color: #5a7a9a;
+      margin-top: 8px; margin-bottom: 32px;
+    }
+
+    hr { border: none; border-top: 1px solid rgba(0,210,255,0.1); margin-bottom: 28px; }
+
+    .pipeline {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 4px; margin-bottom: 32px;
+    }
+    .step {
+      flex: 1; text-align: center; padding: 12px 6px;
+      background: rgba(0,210,255,0.04);
+      border: 1px solid rgba(0,210,255,0.1);
+      border-radius: 8px; transition: border-color .2s;
+    }
+    .step:hover { border-color: rgba(0,210,255,0.35); }
+    .step-icon { font-size: 20px; }
+    .step-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px; color: #00d2ff;
+      text-transform: uppercase; letter-spacing: 1px; margin-top: 4px;
+    }
+    .arrow { color: #2a4060; font-size: 14px; flex-shrink: 0; }
+
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+    .info-item {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(0,210,255,0.08);
+      border-radius: 8px; padding: 14px 16px;
+    }
+    .info-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #5a7a9a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .info-val { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #e8f4ff; font-weight: 700; }
+
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+    .pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; padding: 5px 12px;
+      border-radius: 4px;
+      background: rgba(0,210,255,0.07);
+      color: #00d2ff;
+      border: 1px solid rgba(0,210,255,0.2);
+    }
+
+    .foot {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 24px; border-top: 1px solid rgba(0,210,255,0.1);
+    }
+    .foot-built { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5a7a9a; }
+    .foot-built span { color: #00d2ff; }
+    .btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      padding: 9px 20px;
+      background: #00d2ff; color: #050a0f;
+      border: none; border-radius: 5px;
+      cursor: pointer; text-decoration: none;
+      transition: background .2s, transform .15s;
+      display: inline-block;
+    }
+    .btn:hover { background: #00ff9d; transform: translateY(-1px); }
+
+    @media (max-width: 480px) {
+      .card { padding: 32px 24px; }
+      h1 { font-size: 28px; }
+      .info-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="badge"><span class="dot"></span> Open to DevOps Roles</div>
+
+    <h1>Suryakant <span>Kulkarni</span></h1>
+    <div class="role">// DevOps Engineer · Docker · K8s · AWS · Linux</div>
+
+    <hr/>
+
+    <div class="pipeline">
+      <div class="step"><div class="step-icon">📝</div><div class="step-name">Code</div></div>
+      <div class="arrow">›</div>
+      <div class="step"><div class="step-icon">🔧</div><div class="step-name">Build</div></div>
+      <div class="arrow">›</div>
+      <div class="step"><div class="step-icon">🐳</div><div class="step-name">Docker</div></div>
+      <div class="arrow">›</div>
+      <div class="step"><div class="step-icon">☸️</div><div class="step-name">Deploy</div></div>
+      <div class="arrow">›</div>
+      <div class="step"><div class="step-icon">📊</div><div class="step-name">Monitor</div></div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-label">Hostname</div>
+        <div class="info-val">{{ hostname }}</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Deployed At</div>
+        <div class="info-val">{{ time }}</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Challenge</div>
+        <div class="info-val">100 Days of DevOps</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">Training At</div>
+        <div class="info-val">Cloudblitz · KodeKloud</div>
+      </div>
+    </div>
+
+    <div class="pills">
+      <span class="pill">Docker</span>
+      <span class="pill">Kubernetes</span>
+      <span class="pill">AWS</span>
+      <span class="pill">Linux</span>
+      <span class="pill">Jenkins</span>
+      <span class="pill">Grafana</span>
+      <span class="pill">Git</span>
+      <span class="pill">Bash</span>
+    </div>
+
+    <div class="foot">
+      <div class="foot-built">Built by <span>Suryakant Kulkarni</span></div>
+      <a href="https://linkedin.com/in/suryakantkulkarni" target="_blank" class="btn">LinkedIn ↗</a>
+    </div>
+
+  </div>
+</body>
+</html>
